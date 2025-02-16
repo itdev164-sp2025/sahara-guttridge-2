@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const BlogPost = ({ data }) => {
-  const { title, body } = data.contentfulBlogPost
+  const { title, body } = data.contentfulBlogPost;
 
   return (
     <Layout>
@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
   )
 }
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query blogPostQuery($slug: String!) {

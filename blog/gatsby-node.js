@@ -10,7 +10,7 @@ const path = require('path');
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     graphql(`
@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `).then(result => {
       if (result.errors) {
-        reject(result.errors)
+        reject(result.errors);
       }
 
       result.data.allContentfulBlogPost.edges.forEach(edge => {
@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
         })
       });
 
-      resolve();
+      resolve()
     })
   })
 }
